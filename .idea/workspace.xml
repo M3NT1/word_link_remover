@@ -4,20 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="491600f9-553b-443a-8e91-6bf76f472d8f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/word_link_remover.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/document_processor.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/excel_writer.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/file_utils.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hyperlink_extractor.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+    <list default="true" id="491600f9-553b-443a-8e91-6bf76f472d8f" name="Changes" comment="Első verzió, ami hozott link találatokat">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document_processor.py" beforeDir="false" afterPath="$PROJECT_DIR$/document_processor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/excel_writer.py" beforeDir="false" afterPath="$PROJECT_DIR$/excel_writer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hyperlink_extractor.py" beforeDir="false" afterPath="$PROJECT_DIR$/hyperlink_extractor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,6 +60,19 @@
       <option name="presentableId" value="Default" />
       <updated>1729155442421</updated>
     </task>
+    <task id="LOCAL-00001" summary="Első verzió, ami hozott link találatokat">
+      <option name="closed" value="true" />
+      <created>1729157652878</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1729157652878</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Első verzió, ami hozott link találatokat" />
+    <option name="LAST_COMMIT_MESSAGE" value="Első verzió, ami hozott link találatokat" />
   </component>
 </project>

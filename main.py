@@ -21,6 +21,7 @@ def select_file(title, filetypes):
     root.withdraw()
     file_path = filedialog.askopenfilename(title=title, filetypes=filetypes)
     logging.info(f"Kiválasztott fájl: {file_path}")
+    print(f"Kiválasztott fájl: {file_path}")
     return file_path
 
 
@@ -29,48 +30,53 @@ def select_directory(title, initial_dir=None):
     root.withdraw()
     directory = filedialog.askdirectory(title=title, initialdir=initial_dir)
     logging.info(f"Kiválasztott könyvtár: {directory}")
+    print(f"Kiválasztott könyvtár: {directory}")
     return directory
 
 
 def main():
     logging.info("Program indítása")
-
-    # Dokumentum bekérése
-    doc_path = select_file("Válassza ki a Word dokumentumot", [("Word dokumentumok", "*.docx")])
-    if not doc_path:
-        logging.warning("Nem választott ki fájlt. A program leáll.")
-        print("Nem választott ki fájlt. A program leáll.")
-        return
-
-    # Kimeneti mappa bekérése
-    initial_dir = os.path.dirname(doc_path)
-    output_dir = select_directory("Válassza ki a kimeneti mappát", initial_dir)
-    if not output_dir:
-        logging.warning("Nem választott ki kimeneti mappát. A program leáll.")
-        print("Nem választott ki kimeneti mappát. A program leáll.")
-        return
-
-    create_output_directory(output_dir)
-
-    # Időbélyeg generálása
-    timestamp = datetime.datetime.now().strftime("%Y%m%d%H%M")
-
-    # Excel fájl elérési útjának generálása
-    excel_path = get_file_path(output_dir, f"hivatkozasok_{timestamp}.xlsx")
-
-    # Log fájl elérési útjának generálása
-    log_path = get_file_path(output_dir, f"log_{timestamp}.txt")
+    print("Program indítása")
 
     try:
+        # Dokumentum bekérése
+        doc_path = select_file("Válassza ki a Word dokumentumot", [("Word dokumentumok", "*.docx")])
+        if not doc_path:
+            logging.warning("Nem választott ki fájlt. A program leáll.")
+            print("Nem választott ki fájlt. A program leáll.")
+            return
+
+        # Kimeneti mappa bekérése
+        initial_dir = os.path.dirname(doc_path)
+        output_dir = select_directory("Válassza ki a kimeneti mappát", initial_dir)
+        if not output_dir:
+            logging.warning("Nem választott ki kimeneti mappát. A program leáll.")
+            print("Nem választott ki kimeneti mappát. A program leáll.")
+            return
+
+        create_output_directory(output_dir)
+
+        # Időbélyeg generálása
+        timestamp = datetime.datetime.now().strftime("%Y%m%d%H%M")
+
+        # Excel fájl elérési útjának generálása
+        excel_path = get_file_path(output_dir, f"hivatkozasok_{timestamp}.xlsx")
+
+        # Log fájl elérési útjának generálása
+        log_path = get_file_path(output_dir, f"log_{timestamp}.txt")
+
         logging.info("Dokumentum feldolgozásának kezdete")
+        print("Dokumentum feldolgozásának kezdete")
         # Dokumentum feldolgozása
         document = process_document(doc_path)
 
         logging.info("Hivatkozások kinyerésének kezdete")
+        print("Hivatkozások kinyerésének kezdete")
         # Hivatkozások kinyerése
         hyperlinks = extract_hyperlinks(document)
 
         logging.info("Excel fájl írásának kezdete")
+        print("Excel fájl írásának kezdete")
         # Excel fájl létrehozása és írása
         write_to_excel(hyperlinks, excel_path)
 
@@ -97,3 +103,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+    print("Program befejezve. Nyomjon Enter-t a kilépéshez.")
+    input()
